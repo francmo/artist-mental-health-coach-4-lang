@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Mental Health Coach - Choose Your Version</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        .card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .halloween-card {
+            background: linear-gradient(135deg, #ff6b35 0%, #9b4dca 50%, #1a0b2e 100%);
+        }
+
+        .normal-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ff6b35;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="relative z-10 container mx-auto px-4 py-12">
+            <!-- Header -->
+            <div class="text-center mb-16 float">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">
+                    🎨 Artist Mental Health Coach 🎨
+                </h1>
+                <p class="text-xl md:text-2xl text-purple-100 mb-2">
+                    Choose Your Version
+                </p>
+                <p class="text-lg text-purple-200">
+                    Select your preferred language and theme
+                </p>
+            </div>
+
+            <!-- Version Cards Grid -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+                <!-- Italian Halloween -->
+                <a href="Mental Health Coach for Artists Halloween ed. ITA/index.html"
+                   class="card halloween-card rounded-2xl p-8 text-white relative block">
+                    <div class="badge">🔥 COMPLETE</div>
+                    <div class="text-6xl mb-4 text-center">🎃👻</div>
+                    <h2 class="text-3xl font-bold mb-3 text-center">Halloween Edition</h2>
+                    <p class="text-2xl font-semibold mb-4 text-center text-orange-200">Italiano</p>
+                    <div class="space-y-2 text-purple-100">
+                        <p>✨ Effetti spettrali e atmosfera Halloween</p>
+                        <p>🦇 Pipistrelli, fantasmi e zucche animate</p>
+                        <p>🌙 10+ esercizi creativi spettrali</p>
+                        <p>📊 ~90 esercizi totali con esempi</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-white bg-opacity-20 px-6 py-2 rounded-full font-semibold">
+                            Apri Versione →
+                        </span>
+                    </div>
+                </a>
+
+                <!-- English Halloween -->
+                <a href="Mental Health Coach for Artists Halloween ed. ENG/index.html"
+                   class="card halloween-card rounded-2xl p-8 text-white relative block">
+                    <div class="badge">✨ NEW</div>
+                    <div class="text-6xl mb-4 text-center">🎃👻</div>
+                    <h2 class="text-3xl font-bold mb-3 text-center">Halloween Edition</h2>
+                    <p class="text-2xl font-semibold mb-4 text-center text-orange-200">English</p>
+                    <div class="space-y-2 text-purple-100">
+                        <p>✨ Spooky effects and Halloween atmosphere</p>
+                        <p>🦇 Animated bats, ghosts and pumpkins</p>
+                        <p>🌙 10+ spooky creative exercises</p>
+                        <p>📊 ~90 total exercises with examples</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-white bg-opacity-20 px-6 py-2 rounded-full font-semibold">
+                            Open Version →
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Italian Normal -->
+                <a href="Mental Health Coach for Artists ITA/index.html"
+                   class="card normal-card rounded-2xl p-8 text-white relative block">
+                    <div class="text-6xl mb-4 text-center">🌸💜</div>
+                    <h2 class="text-3xl font-bold mb-3 text-center">Normal Edition</h2>
+                    <p class="text-2xl font-semibold mb-4 text-center text-blue-200">Italiano</p>
+                    <div class="space-y-2 text-purple-100">
+                        <p>🎨 Design pulito e professionale</p>
+                        <p>💫 Focus sul benessere mentale</p>
+                        <p>📝 Diario e tracciamento mood</p>
+                        <p>🧘 Esercizi creativi e mindfulness</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-white bg-opacity-20 px-6 py-2 rounded-full font-semibold">
+                            Apri Versione →
+                        </span>
+                    </div>
+                </a>
+
+                <!-- English Normal -->
+                <a href="Mental Health Coach for Artists ENG/index.html"
+                   class="card normal-card rounded-2xl p-8 text-white relative block">
+                    <div class="text-6xl mb-4 text-center">🌸💜</div>
+                    <h2 class="text-3xl font-bold mb-3 text-center">Normal Edition</h2>
+                    <p class="text-2xl font-semibold mb-4 text-center text-blue-200">English</p>
+                    <div class="space-y-2 text-purple-100">
+                        <p>🎨 Clean and professional design</p>
+                        <p>💫 Focus on mental wellness</p>
+                        <p>📝 Journal and mood tracking</p>
+                        <p>🧘 Creative exercises and mindfulness</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-white bg-opacity-20 px-6 py-2 rounded-full font-semibold">
+                            Open Version →
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Features Section -->
+            <div class="mt-16 max-w-4xl mx-auto text-center text-white">
+                <h3 class="text-2xl font-bold mb-6">All Versions Include:</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-purple-100">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
+                        <div class="text-4xl mb-3">📊</div>
+                        <h4 class="font-bold mb-2">Mood Tracking</h4>
+                        <p class="text-sm">Track your emotional state daily</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
+                        <div class="text-4xl mb-3">📝</div>
+                        <h4 class="font-bold mb-2">Creative Journal</h4>
+                        <p class="text-sm">Write thoughts and reflections</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
+                        <div class="text-4xl mb-3">🤖</div>
+                        <h4 class="font-bold mb-2">AI Feedback</h4>
+                        <p class="text-sm">Upload artwork for AI analysis</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-16 text-center text-purple-200">
+                <p class="mb-2">💜 Made with love for Students & Artists</p>
+                <p class="text-sm">Created and developed by Francesco Mariano</p>
+                <p class="text-sm mt-1">2023-2025</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
