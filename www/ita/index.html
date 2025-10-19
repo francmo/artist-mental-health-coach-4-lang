@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<!--
+  Coach di Benessere Creativo per Musicisti
+  Ideato e sviluppato da: Francesco Mariano
+  2023
+  Contatti: francescomariano@gmail.com
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach di Benessere Creativo per Musicisti</title>
+
+    <meta name="description" content="Un coach di benessere creativo dedicato a Studenti di Musica e Musicisti. Traccia il tuo mood, pratica esercizi creativi e ricevi supporto personalizzato.">
+    <meta name="author" content="Francesco Mariano">
+
+    <meta property="og:title" content="Coach di Benessere Creativo per Musicisti">
+    <meta property="og:description" content="Un coach di benessere creativo dedicato a Studenti di Musica e Musicisti. Traccia il tuo mood, pratica esercizi creativi e ricevi supporto personalizzato.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://francmo.github.io/artist-mental-health-coach-4-lang/assets/og-preview.png?v=2">
+    <meta property="og:url" content="https://tuodominio.com">
+    <meta property="og:site_name" content="Coach di Benessere Creativo per Musicisti">
+    <meta property="og:locale" content="it_IT">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coach di Benessere Creativo per Musicisti">
+    <meta name="twitter:description" content="Un coach per il benessere mentale dedicato a Studenti di Musica e Musicisti. Traccia il tuo mood, pratica esercizi creativi e ricevi supporto personalizzato.">
+    <meta name="twitter:image" content="https://i.imgur.com/placeholder.png">
+
+    <meta name="theme-color" content="#7dd3c0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="/main.jsx"></script>
+
+    <!-- Firebase SDK (versione 10.x compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: linear-gradient(135deg, #e8f5f1 0%, #d4f1e8 100%);
+            overflow-x: hidden;
+        }
+
+        /* Wellness Gradient Background */
+        .gradient-art {
+            background: linear-gradient(135deg, #7dd3c0 0%, #a8d5ba 50%, #f0f8f5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        /* Card hover - professional and clean */
+        .card-hover {
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 2px solid rgba(125, 211, 192, 0.3);
+            background: rgba(255, 255, 255, 0.7) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(125, 211, 192, 0.25);
+            border-color: rgba(125, 211, 192, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .animate-slideIn {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes moodFullscreen {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            40% {
+                transform: translate(-50%, -50%) scale(10);
+            }
+            60% {
+                transform: translate(-50%, -50%) scale(10);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .animate-mood-fullscreen {
+            animation: moodFullscreen 3s ease-in-out;
+            position: fixed !important;
+            z-index: 9999 !important;
+            left: 50% !important;
+            top: 50% !important;
+        }
+
+        .mood-selected {
+            border: 3px solid #10b981 !important;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(52, 211, 153, 0.3)) !important;
+            position: relative;
+            z-index: 100;
+        }
+
+        .mood-selected::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: #10b981;
+            font-weight: bold;
+            z-index: 10000;
+        }
+
+        /* Wellness text colors - Musical warm pastels */
+        .text-wellness-primary { color: #f4a261; }
+        .text-wellness-secondary { color: #e9c46a; }
+        .text-wellness-accent { color: #e76f51; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e8f5f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #7dd3c0, #a8d5ba);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #b8e6d5, #7dd3c0);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
