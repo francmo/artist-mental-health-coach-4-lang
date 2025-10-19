@@ -7563,12 +7563,8 @@ APPROACH:
                 {/* Conditional content based on tab */}
                 {exerciseTab === 'library' && (
                   <div className="space-y-3">
-                    <p className="text-sm text-gray-600 mb-4">
-                      {isPremium ? `${availableExercises.length} exercises available` : '15 free exercises, 45 premium locked'}
-                    </p>
-
-                    {/* Free exercises list */}
-                    {availableExercises.slice(0, isPremium ? availableExercises.length : 15).map((exercise, index) => (
+                    {/* All exercises list (completely free) */}
+                    {availableExercises.map((exercise, index) => (
                       <div
                         key={index}
                         onClick={() => {
@@ -9493,12 +9489,12 @@ APPROACH:
                 {/* Language Selection Button */}
                 <button
                   onClick={() => {
-                    window.location.href = '../ita/index.html';
+                    window.location.href = '/index.html';
                   }}
-                  className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded shadow-md hover:shadow-lg transition-all text-xs font-semibold flex items-center gap-1"
-                  title="Switch to Italian / Passa all'italiano"
+                  className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded shadow-md hover:shadow-lg transition-all text-xs font-semibold"
+                  title="Back to language selection / Torna alla selezione lingua"
                 >
-                  <span className="text-sm">🇮🇹</span>
+                  ITA-ENG
                 </button>
 
                 {firebaseUser ? (

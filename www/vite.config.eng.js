@@ -5,6 +5,7 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [react()],
   root: 'eng',
+  base: './',
   build: {
     outDir: 'dist',
     emptyOutDir: true,

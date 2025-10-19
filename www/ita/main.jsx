@@ -5432,12 +5432,12 @@ Rispondi in modo diretto, senza formattazioni particolari. Massimo 300 parole.`;
                 {/* Bottone Cambia Versione */}
                 <button
                   onClick={() => {
-                    window.location.href = '../eng/index.html';
+                    window.location.href = '/index.html';
                   }}
-                  className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded shadow-md hover:shadow-lg transition-all text-xs font-semibold flex items-center gap-1"
-                  title="Passa all'inglese / Switch to English"
+                  className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded shadow-md hover:shadow-lg transition-all text-xs font-semibold"
+                  title="Torna alla selezione lingua / Back to language selection"
                 >
-                  <span className="text-sm">🇬🇧</span>
+                  ITA-ENG
                 </button>
                 {firebaseUser ? (
                   <div className="bg-blue-600 text-white px-2 py-1 rounded shadow-md flex items-center gap-1 text-xs">
